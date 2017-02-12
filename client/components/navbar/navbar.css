@@ -1,0 +1,20 @@
+.navbar {
+  @apply --flex-row-center-theme;
+  color: var(--text-color);
+  h: 70px;
+  lost-utility: clearfix;
+  p: 0 30px;
+  .main-nav {
+    display: flex;
+    f-dir: row;
+    lost-column: 1/2;
+    li{ p-r: 10px; }
+  }
+  .admin-nav {
+    display: flex;
+    f-dir: row;
+    f-just: flex-end;
+    lost-column: 1/2;
+    li{ p-l: 10px; }
+  }
+}

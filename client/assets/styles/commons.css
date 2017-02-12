@@ -1,0 +1,42 @@
+:root {
+  --main-color: #12;
+  --text-color: #fc;
+
+  --center-theme: {
+    margin-left: auto;
+    margin-right: auto;
+  };
+  --flex-column-center-theme: {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  };
+  --flex-row-center-theme: {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  };
+}
+
+@alias {
+  w: width;
+  h: height;
+  bc: background-color;
+  p: padding;
+  p-l: padding-left;
+  p-r: padding-right;
+  m: margin;
+  m-l: margin-left;
+  m-r: margin-right;
+  f-dir: flex-direction;
+  f-just: justify-content;
+}
+
+body {
+  @apply --center-theme;
+  bc: var(--main-color);
+  color: var(--text-color);
+  w: 920px;
+}

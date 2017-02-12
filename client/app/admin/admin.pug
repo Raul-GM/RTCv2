@@ -1,0 +1,8 @@
+.container
+  p
+    | Estas son las tareas que se puede hacer como administrador
+  ul.list-group
+    li.list-group-item(ng-repeat='op in admin.options')
+      span {{op.text}}
+      button(ng-click="admin.action(op.action)")
+        | {{op.label}}

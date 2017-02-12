@@ -1,0 +1,5 @@
+@import './assets/styles/reset.css';
+@import './app/main/main.css';
+@import './assets/styles/commons.css';
+@import './components/navbar/navbar.css';
+

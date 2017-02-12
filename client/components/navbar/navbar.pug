@@ -1,0 +1,20 @@
+nav.navbar
+  ul.main-nav
+    li(ng-repeat='item in $ctrl.menu', ui-sref-active='active')
+      a(ui-sref='{{item.state}}') {{item.title}}
+
+  ul.admin-nav
+    //li(ng-hide='$ctrl.isLoggedIn()', ui-sref-active='active')
+      a(ui-sref='signup') Sign up
+
+    li(ng-hide='$ctrl.isLoggedIn()', ui-sref-active='active')
+      a(ui-sref='login') Login
+
+    li(ng-show='$ctrl.isLoggedIn()')
+      p Hola {{ $ctrl.getCurrentUser().name }}
+
+    li(ng-show='$ctrl.isAdmin()', ui-sref-active='active')
+      a(ui-sref='admin') Admin
+
+    li(ng-show='$ctrl.isLoggedIn()')
+      a(ui-sref='logout') Logout
