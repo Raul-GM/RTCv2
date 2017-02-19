@@ -18,7 +18,6 @@ export class DateCardComponent {
     const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     let date = new Date(this.date);
-    console.log(date);
     this.formatedDate.day = date.getDate();
     this.formatedDate.month = months[date.getMonth()];
     this.formatedDate.year = date.getFullYear();

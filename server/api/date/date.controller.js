@@ -8,6 +8,22 @@ let getField = (field, article) => {
   let tag = '</strong>';
   let search = field + ':';
   if(article.indexOf(search) === -1) return ''; //Si no encuentra el tag de búsqueda, devolvemos vacío
+  if(field === 'Ubicación') { //Si el campo requerido es Ubicación, intentamos separar el nombre de la url
+    let articleUpdated = {
+      name: '',
+      url: ''
+    }
+    let place = article.substr(article.indexOf(search) + search.length + tag.length);
+    place = place.substr(0, place.indexOf('</li>')).trim().toLowerCase();
+    if(place.indexOf('href=') === -1) {
+      articleUpdated.name = place;
+    } else {
+      //articleUpdated.name = place.substr(place.indexOf('>')+1, 4);
+      articleUpdated.name = place.substring(place.indexOf('>')+1, place.length-4);
+      articleUpdated.url = place.substr(place.indexOf('href=')+6, (place.indexOf('" tar') - 10));
+    }
+    return articleUpdated;
+  }
   let articleUpdated = article.substr(article.indexOf(search) + search.length + tag.length);
   return articleUpdated.substr(0, articleUpdated.indexOf('</li>')).trim().toLowerCase();
 };
