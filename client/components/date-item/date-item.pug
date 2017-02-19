@@ -1,0 +1,8 @@
+h3 {{$ctrl.date.name}}
+div
+  div(ng-repeat="d in $ctrl.date.dates")
+    div
+      date-card-item(date="d.date")
+    div
+      span {{d.city}}
+      //span Sala: {{d.place}}

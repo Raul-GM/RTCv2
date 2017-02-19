@@ -2,4 +2,4 @@
 @import './app/main/main.css';
 @import './assets/styles/commons.css';
 @import './components/navbar/navbar.css';
-
+@import './components/date-card/date-card.css';

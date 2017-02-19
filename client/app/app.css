@@ -95,4 +95,15 @@ body {
 }
 .navbar:after .main-nav li {}
 .navbar:after .admin-nav li {}
-
+.date-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: black;
+  line-height: 99%;
+  padding: 5px 0;
+  width: 60px;
+  font-size: 12px;
+}

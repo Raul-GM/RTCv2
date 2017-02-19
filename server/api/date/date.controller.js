@@ -4,18 +4,13 @@ import Date from './date.model';
 import feed from 'feed-read';
 import _ from 'lodash';
 
-let getField = (field, article, cap) => {
+let getField = (field, article) => {
   let tag = '</strong>';
   let search = field + ':';
   if(article.indexOf(search) === -1) return ''; //Si no encuentra el tag de búsqueda, devolvemos vacío
   let articleUpdated = article.substr(article.indexOf(search) + search.length + tag.length);
   return articleUpdated.substr(0, articleUpdated.indexOf('</li>')).trim().toLowerCase();
 };
-
-let capitalize = (str) => {
-  return str.replace(/\b\w/g, function(l){ return l.toUpperCase() });
-};
-
 /*
 * Leemos la web de Metal Cry
 * */
@@ -28,30 +23,30 @@ let readMC = () => {
     let found = {};
     feed(mcConcerts, (err, articles) => {
       articles.forEach((article)=> {
-        name = {name: getField('Grupo', article.content, true)};
+        name = {name: getField('Grupo', article.content)};
         found =  _.find(groups, name);
         if(found !== undefined) {
           found.dates.push({
-            tour: getField('Gira', article.content, true),
-            date: getField('Fecha', article.content, false),
-            hour: getField('Hora', article.content, false),
-            city: getField('Ciudad', article.content, false),
-            price: getField('Precio', article.content, false),
-            place: getField('Ubicación', article.content, false),
-            phone: getField('Teléfono', article.content, false)
+            tour: getField('Gira', article.content),
+            date: getField('Fecha', article.content).replace('abril', 'april'),
+            hour: getField('Hora', article.content),
+            city: getField('Ciudad', article.content),
+            price: getField('Precio', article.content),
+            place: getField('Ubicación', article.content),
+            phone: getField('Teléfono', article.content)
           });
         } else {
           group = {
-            _id: getField('Grupo', article.content, true),
-            name: getField('Grupo', article.content, true),
+            _id: getField('Grupo', article.content),
+            name: getField('Grupo', article.content),
             dates: [{
-              tour: getField('Gira', article.content, true),
-              date: getField('Fecha', article.content, false),
-              hour: getField('Hora', article.content, false),
-              city: getField('Ciudad', article.content, false),
-              price: getField('Precio', article.content, false),
-              place: getField('Ubicación', article.content, false),
-              phone: getField('Teléfono', article.content, false)
+              tour: getField('Gira', article.content),
+              date: getField('Fecha', article.content).replace('abril', 'april'),
+              hour: getField('Hora', article.content),
+              city: getField('Ciudad', article.content),
+              price: getField('Precio', article.content),
+              place: getField('Ubicación', article.content),
+              phone: getField('Teléfono', article.content)
             }]
           };
           groups.push(group);
@@ -96,7 +91,6 @@ export function load(req, res) {
         );
 
       });
-      console.log(promises);
       Promise.all(promises).then(
         ()=> { return resolve(res.status(200).json()); },
         (err)=> { return reject(res.status(500).json(err)); }
