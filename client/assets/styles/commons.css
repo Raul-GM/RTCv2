@@ -1,6 +1,10 @@
 :root {
   --main-color: #12;
   --text-color: #fc;
+  --card-color: #e1bee7;
+  --card-header-color: #4a148c;
+  --card-date-month-color: #d50000;
+  --card-body-margin: 6px;
 
   --center-theme: {
     margin-left: auto;
@@ -21,17 +25,21 @@
 }
 
 @alias {
-  w: width;
-  h: height;
   bc: background-color;
+  dis: display;
+  fSize: font-size;
+  f-dir: flex-direction;
+  f-just: justify-content;
+  h: height;
+  m: margin;
+  m-b: margin-bottom;
+  m-l: margin-left;
+  m-r: margin-right;
+  m-t: margin-top;
   p: padding;
   p-l: padding-left;
   p-r: padding-right;
-  m: margin;
-  m-l: margin-left;
-  m-r: margin-right;
-  f-dir: flex-direction;
-  f-just: justify-content;
+  w: width;
 }
 
 body {

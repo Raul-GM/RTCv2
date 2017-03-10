@@ -30,6 +30,10 @@ import util from '../components/util/util.module';
 import Admin from '../components/services/Admin/Admin.module';
 import Api from '../components/services/Api/Api.module';
 import Config from '../components/services/Config/Config.service';
+import capitalize from '../components/filters/capitalize/capitalize.filter';
+import cutString from '../components/filters/cut-string/cut-string.filter';
+import firstLetterUpper from '../components/filters/first-letter-upper/first-letter-upper.filter';
+import toDayOfWeek from '../components/filters/to-day-of-week/to-day-of-week.filter';
 
 import './app.css';
 

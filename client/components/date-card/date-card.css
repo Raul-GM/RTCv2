@@ -1,9 +1,26 @@
 .date-card{
   @apply --flex-column-center-theme;
-  background: white;
-  color: black;
-  line-height: 99%;
-  padding: 5px 0;
-  width: 60px;
-  font-size: 12px;
+  bc: var(--text-color);
+  color: var(--main-color);
+  font-weight: bold;
+  line-height: 120%;
+  m: var(--card-body-margin);
+  w: 54px;
+  fSize: 12px;
+  .month {
+    bc: var(--card-date-month-color);
+    color: var(--text-color);
+    fSize: 12px;
+    p: 3px 0;
+    text-align: center;
+    text-transform: uppercase;
+    w: 100%;
+  }
+  .day {
+    fSize: 18px;
+    m-t: 2px
+  }
+  .year {
+    fSize: 12px;
+  }
 }

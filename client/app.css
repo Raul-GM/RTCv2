@@ -3,3 +3,5 @@
 @import './assets/styles/commons.css';
 @import './components/navbar/navbar.css';
 @import './components/date-card/date-card.css';
+@import './components/date-item/date-item.css';
+@import './components/list-dates/list-dates.css';

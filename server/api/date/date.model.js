@@ -15,7 +15,6 @@ let DateSchema = new mongoose.Schema({
       name: String,
       url: String
     },
-    // placeUrl: String, //TODO separar nombre de la sala y url de google maps. Ahora mismo todo en el mismo campo
     phone: String
     // Podríamos poner urls a noticias relacionadas con dichos conciertos
   }]

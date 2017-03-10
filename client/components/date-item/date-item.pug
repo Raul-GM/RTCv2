@@ -1,8 +1,14 @@
-h3 {{$ctrl.date.name}}
+h3 {{$ctrl.date.name | capitalize}}
 div
-  div(ng-repeat="d in $ctrl.date.dates")
-    div
+  .date-item(ng-repeat="d in $ctrl.date.dates")
+    .header
       date-card-item(date="d.date")
-    div
-      span {{d.city}}
-      //span Sala: {{d.place}}
+    .body
+      p.tour(ng-show="d.tour") Gira: {{ d.tour | uppercase }}
+      p.place
+        span.city(ng-show="d.city") {{d.city | capitalize}}
+        span.place(ng-show="d.place.name") &nbsp;- {{d.place.name | capitalize}}
+      p.data
+        span(ng-show="d.date") {{d.date | toDayOfWeek}}
+        span(ng-show="d.hour") &nbsp;- {{ d.hour }}
+        span(ng-show="d.price") &nbsp;- {{ d.price }}

@@ -1,0 +1,5 @@
+.card-date {
+  bc: var(--card-color);
+  dis: block;
+  m: 14px;
+}
